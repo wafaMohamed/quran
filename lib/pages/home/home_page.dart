@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> items = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+    final List<String> items = ['Item 1', 'Item 2', 'Item 3'];
 
     return SafeArea(
       child: Material(
@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            //?  listview widget
+            //? listview widget
             Positioned.directional(
               textDirection: TextDirection.rtl,
               bottom: 40,

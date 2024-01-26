@@ -12,6 +12,8 @@ class AppTextArabic {
   static const String alreadyHaveAccount = "لدى حساب بالفعل";
   static const String quranReading = "قراءه القران";
   static const String quranListening = "استماع القران";
+  static const String quranWriting = "كتابة القران";
+
   static const String ayaInQuran =
       "فَإِذَا قَرَأْتَ الْقُرْآنَ فَاسْتَعِذْ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ";
   static const String chooseYourFavoriteSheikh = "اختر شيخك المفضل";

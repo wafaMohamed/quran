@@ -38,24 +38,42 @@ class CustomListWheelScrollView extends StatelessWidget {
   }
 
   Widget _buildItem(String item) {
-    // final String text;
-    // final String text;
+    // List<String> assets = [
+    //   AppAssets.noiseSliderAsset,
+    //   AppAssets.quranAsset,
+    //   AppAssets.noiseSliderAsset,
+    // ];
+    // List<String> text = [
+    //   AppTextArabic.quranReading,
+    //   AppTextArabic.quranListening,
+    //   AppTextArabic.quranWriting,
+    // ];
+    BuildContext context;
+
     return Padding(
       padding: const EdgeInsets.all(15),
-      child: CustomContainer(
-        borderRadius: 10.0,
-        width: 500,
-        height: 500,
-        backgroundColor: AppColor.gridGrayColor,
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            CustomTextWidget(
-                text: AppTextArabic.quranReading,
-                style: TextStyles.interFont26W700White),
-            const VerticalSpacing(20),
-            const CustomSvgPicture(path: AppAssets.noiseSliderAsset),
-          ],
+      child: InkWell(
+        onTap: () {
+          // GoRouter.of(context).pushNamed(
+          //     AppRoutesNames.chooseYourFavouriteSheikhRoute);
+        },
+        child: CustomContainer(
+          borderRadius: 10.0,
+          width: 500,
+          height: 500,
+          backgroundColor: AppColor.gridGrayColor,
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              CustomTextWidget(
+                  text: AppTextArabic.quranListening,
+                  style: TextStyles.interFont26W700White),
+              const VerticalSpacing(20),
+              const CustomSvgPicture(
+                path: AppAssets.quranAsset,
+              ),
+            ],
+          ),
         ),
       ),
     );
