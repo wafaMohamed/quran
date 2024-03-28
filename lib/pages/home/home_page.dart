@@ -1,15 +1,39 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:untitled4/core/core_widgets/custom_images/custom_svg_picture.dart';
 import 'package:untitled4/core/core_widgets/text_widget/custom_text.dart';
 import 'package:untitled4/core/language/app_texts.dart';
+import 'package:untitled4/pages/home/choose_your_favourite_sheikh.dart';
 
 import '../../core/assets/app_assets/app_assets.dart';
+import '../../core/core_widgets/custom_container_widget.dart';
+import '../../core/core_widgets/vertical_spacing.dart';
 import '../../core/styles/space_manager.dart';
 import '../../core/styles/text_style.dart';
-import '../../widgets/home_widget/custom_list_wheel_scroll_view.dart';
+import '../../core/theme/app_color/app_color.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  late FixedExtentScrollController controller;
+  @override
+  void initState() {
+    controller = FixedExtentScrollController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    controller.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +62,85 @@ class HomePage extends StatelessWidget {
               ),
             ),
             //? listview widget
-            Positioned.directional(
+            ListWheelScrollView(
+              // per higher => get hide
+              //perspective: 0.009,
+              // diameter => make it more visible
+              diameterRatio: 1.5,
+              controller: controller,
+              itemExtent: 250,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    log('go to  ...');
+                  },
+                  child: CustomContainer(
+                    borderRadius: 10.0,
+                    width: 300,
+                    backgroundColor: AppColor.gridGrayColor,
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        CustomTextWidget(
+                            text: AppTextArabic.quranListening,
+                            style: TextStyles.interFont26W700White),
+                        const VerticalSpacing(20),
+                        const CustomSvgPicture(
+                          path: AppAssets.quranAsset,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    log('go to  ...');
+                  },
+                  child: CustomContainer(
+                    borderRadius: 10.0,
+                    width: 300,
+                    backgroundColor: AppColor.gridGrayColor,
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        CustomTextWidget(
+                            text: AppTextArabic.quranListening,
+                            style: TextStyles.interFont26W700White),
+                        const VerticalSpacing(20),
+                        const CustomSvgPicture(
+                          path: AppAssets.quranAsset,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Get.to(ChooseYourFavouriteSheikh());
+                    log('go to  ...');
+                  },
+                  child: CustomContainer(
+                    borderRadius: 10.0,
+                    width: 300,
+                    backgroundColor: AppColor.gridGrayColor,
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        CustomTextWidget(
+                            text: AppTextArabic.quranListening,
+                            style: TextStyles.interFont26W700White),
+                        const VerticalSpacing(20),
+                        const CustomSvgPicture(
+                          path: AppAssets.quranAsset,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                ///////////////////////////////////////
+              ],
+            ),
+            /*  Positioned.directional(
               textDirection: TextDirection.rtl,
               bottom: 40,
               top: 0,
@@ -51,7 +153,7 @@ class HomePage extends StatelessWidget {
                   print('Selected Item: ${items[index]}');
                 },
               ),
-            ),
+            ), */
             Positioned.directional(
               textDirection: TextDirection.rtl,
               bottom: 0,

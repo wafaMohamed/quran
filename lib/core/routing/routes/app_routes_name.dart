@@ -1,4 +1,4 @@
-class AppRoutesNames {
+/* class AppRoutesNames {
   static const splashScreenRoute = "/";
   static const String signUpCoverPageRoute = "/SignUpCoverPage";
   static const String homePageRoute = "/HomePage";
@@ -10,3 +10,4 @@ class AppRoutesNames {
       "/ChooseYourFavouriteSurah";
 // static const String Route= "/";
 }
+ */

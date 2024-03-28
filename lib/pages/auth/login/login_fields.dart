@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:go_router/go_router.dart';
-import 'package:untitled4/core/routing/routes/app_routes_name.dart';
+import 'package:get/get.dart';
+import 'package:untitled4/able/home.dart';
+import 'package:untitled4/choose.dart';
+import 'package:untitled4/disable/home.dart';
+import 'package:untitled4/pages/home/home_page.dart';
+import 'package:untitled4/song.dart';
 
+import '../../../able/speak.dart';
 import '../../../core/core_widgets/buttons/custom_button.dart';
 import '../../../core/core_widgets/field/custom_text_form_field.dart';
-import '../../../core/core_widgets/text_widget/custom_text.dart';
 import '../../../core/core_widgets/text_widget/text_button.dart';
 import '../../../core/language/app_texts.dart';
 import '../../../core/styles/space_manager.dart';
-import '../../../core/styles/text_style.dart';
 
 class LoginFields extends StatefulWidget {
   const LoginFields({super.key});
@@ -25,7 +28,7 @@ class _LoginFieldsState extends State<LoginFields> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        CustomTextWidget(
+        /* CustomTextWidget(
             text: AppTextArabic.welcomeInQuranApp,
             textDirection: TextDirection.rtl,
             style: TextStyles.interFont20W600White),
@@ -34,7 +37,7 @@ class _LoginFieldsState extends State<LoginFields> {
             text: AppTextArabic.startWithQuran,
             textDirection: TextDirection.rtl,
             style: TextStyles.interFont14W400White),
-        SpaceManager.sizedBox32h(context),
+        SpaceManager.sizedBox32h(context), */
         CustomTextFormField(
           hintText: AppTextArabic.enterEmail,
           keyboardType: TextInputType.emailAddress,
@@ -59,15 +62,17 @@ class _LoginFieldsState extends State<LoginFields> {
               CustomTextButton(
                 text: AppTextArabic.createNewAccount,
                 onPressed: () {
-                  GoRouter.of(context)
-                      .pushNamed(AppRoutesNames.signUpCoverPageRoute);
+                  Get.to(HomeAblePeople());
+                  /* GoRouter.of(context)
+                      .pushNamed(AppRoutesNames.signUpCoverPageRoute); */
                 },
               ),
               CustomTextButton(
                 text: AppTextArabic.forgetPassword,
                 onPressed: () {
-                  GoRouter.of(context)
-                      .push(AppRoutesNames.forgetPasswordPageRoute);
+                  Get.to(HomeDisable());
+                  /* GoRouter.of(context)
+                      .push(AppRoutesNames.forgetPasswordPageRoute); */
                 },
               ),
             ],
@@ -76,7 +81,8 @@ class _LoginFieldsState extends State<LoginFields> {
         CustomButton(
           text: AppTextArabic.signIn,
           onPressed: () {
-            GoRouter.of(context).push(AppRoutesNames.homePageRoute);
+            Get.to(ChooseCategory());
+            /* GoRouter.of(context).push(AppRoutesNames.homePageRoute); */
           },
         ),
       ],

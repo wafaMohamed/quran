@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg.dart';
 
 import '../../../core/assets/app_assets/app_assets.dart';
-import 'login_feilds.dart';
+import 'login_fields.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class LoginPage extends StatelessWidget {
         child: Stack(
           children: [
             Image.asset(
-              AppAssets.ramadanPngAsset,
+              AppAssets.audioCoverAsset,
               fit: BoxFit.cover,
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,

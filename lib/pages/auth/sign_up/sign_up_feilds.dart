@@ -55,8 +55,8 @@ class SignUpFields extends StatelessWidget {
           CustomButton(
             text: AppTextArabic.signIn,
             onPressed: () {
-              GoRouter.of(context)
-                  .pushNamed(AppRoutesNames.verificationPageRoute);
+              /*  GoRouter.of(context)
+                  .pushNamed(AppRoutesNames.verificationPageRoute); */
             },
           ),
           SpaceManager.sizedBox25h(context),
